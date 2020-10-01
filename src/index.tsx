@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {configureStore} from 'redux-toolkit'
 import './index.css';
-// @ts-expect-error ts-migrate(6142) FIXME: Module './App' was resolved to '/home/chris/Docume... Remove this comment to see the full error message
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-// @ts-expect-error ts-migrate(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
+const store = configureStore({
+    reducer: counter
+  })
+
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
